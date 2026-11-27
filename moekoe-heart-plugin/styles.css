@@ -1,0 +1,45 @@
+/* MoeKoe 播放栏红心收藏状态样式 */
+
+.moekoe-heart-btn {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease, opacity 0.2s ease;
+}
+
+.moekoe-heart-btn.moekoe-heart-liked,
+.moekoe-heart-btn.moekoe-heart-liked i.fa-heart,
+.player-bar .extra-controls .extra-btn.moekoe-heart-liked,
+.player-bar .extra-controls .extra-btn.moekoe-heart-liked i.fa-heart,
+.lyrics-screen .player-controls .like-btn.moekoe-heart-liked,
+.lyrics-screen .player-controls .like-btn.moekoe-heart-liked i.fa-heart {
+  color: #ff4d6a !important;
+  filter: drop-shadow(0 0 6px rgba(255, 77, 106, 0.35));
+}
+
+.moekoe-heart-btn.moekoe-heart-liked:hover,
+.moekoe-heart-btn.moekoe-heart-liked:hover i.fa-heart {
+  color: #ff2a55 !important;
+  transform: scale(1.1);
+}
+
+.moekoe-heart-btn.moekoe-heart-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.moekoe-heart-btn.moekoe-heart-pop i.fa-heart {
+  animation: moekoe-heart-pop-anim 0.36s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes moekoe-heart-pop-anim {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.38);
+  }
+  70% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
