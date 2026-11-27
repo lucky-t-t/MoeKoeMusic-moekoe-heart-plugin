@@ -17,6 +17,8 @@
 
 <img width="381" height="589" alt="image" src="https://github.com/user-attachments/assets/6b6b05db-cc20-41be-9c15-208565017695" />
 
+<img width="128" height="380" alt="image" src="https://github.com/user-attachments/assets/f9140a75-5dde-4529-9f56-ee716f2500fe" />
+
 同时联动更新播放栏红心、全屏歌词页红心、首页「我喜欢」卡片配色与列表「下一首播放」悬停高亮色，并提供功能开关。
 
 歌曲列表增加「下一首播放」按钮，支持排队
