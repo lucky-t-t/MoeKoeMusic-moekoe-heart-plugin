@@ -6,7 +6,8 @@
 - 双位置实时联动：底部播放栏与全屏歌词页的红心按钮状态同步更新。
 - 跨音质智能匹配：自动匹配普通/HQ/FLAC 等不同音质的 Hash 及歌名-歌手，切歌与切换音质时状态准确。
 - 无需手动配置：自动复用 MoeKoeMusic Windows 客户端内置 API（window.kugouapi）与登录态，自动识别「我喜欢」歌单。
-安装方法（Windows 版 MoeKoeMusic）
+安装方法（Windows 版 MoeKoeMusic）：先下载.zip文件
+
 方式一：通过 .zip 压缩包一键安装（推荐）
 1. 打开 MoeKoeMusic Windows 客户端。
 2. 进入 设置 -> 插件管理 -> 已安装插件。
