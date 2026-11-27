@@ -1,0 +1,200 @@
+/* MoeKoe 播放栏红心收藏状态与扩展样式 */
+
+:root {
+  --moekoe-heart-color: #ff4d6a;
+}
+
+.moekoe-heart-btn {
+  transition: transform 0.2s cubic-bezier(0.34, 1.56, 0.64, 1), color 0.2s ease, opacity 0.2s ease;
+}
+
+.moekoe-heart-btn.moekoe-heart-liked,
+.moekoe-heart-btn.moekoe-heart-liked i.fa-heart,
+.player-bar .extra-controls .extra-btn.moekoe-heart-liked,
+.player-bar .extra-controls .extra-btn.moekoe-heart-liked i.fa-heart,
+.lyrics-screen .player-controls .like-btn.moekoe-heart-liked,
+.lyrics-screen .player-controls .like-btn.moekoe-heart-liked i.fa-heart {
+  color: var(--moekoe-heart-color, #ff4d6a) !important;
+  filter: drop-shadow(0 0 6px color-mix(in srgb, var(--moekoe-heart-color, #ff4d6a) 38%, transparent));
+}
+
+.moekoe-heart-btn.moekoe-heart-liked:hover,
+.moekoe-heart-btn.moekoe-heart-liked:hover i.fa-heart {
+  filter: brightness(1.08) drop-shadow(0 0 8px color-mix(in srgb, var(--moekoe-heart-color, #ff4d6a) 52%, transparent));
+  transform: scale(1.1);
+}
+
+.moekoe-heart-btn.moekoe-heart-loading {
+  opacity: 0.6;
+  pointer-events: none;
+}
+
+.moekoe-heart-btn.moekoe-heart-pop i.fa-heart {
+  animation: moekoe-heart-pop-anim 0.36s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+@keyframes moekoe-heart-pop-anim {
+  0% {
+    transform: scale(1);
+  }
+  40% {
+    transform: scale(1.38);
+  }
+  70% {
+    transform: scale(0.92);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* 播放列表弹窗（QueueList）中的“下一首播放”按钮与排版兼容（适配默认及第三方主题） */
+.queue-popup .queue-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: space-between !important;
+}
+
+.queue-popup .queue-item .queue-song-info {
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  margin-right: 6px !important;
+}
+
+.queue-popup .queue-item .queue-song-title {
+  width: auto !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+.queue-popup .queue-item .queue-actions {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 5px !important;
+  flex-shrink: 0 !important;
+}
+
+.queue-popup .queue-item .moekoe-play-next-btn {
+  display: inline-flex !important;
+  visibility: visible !important;
+  opacity: 0.9 !important;
+  transform: none !important;
+  width: 24px !important;
+  height: 24px !important;
+  background: rgba(127, 127, 127, 0.14);
+  color: var(--text-color, #475569);
+}
+
+.queue-popup .queue-item .moekoe-play-next-btn.moekoe-queued {
+  background: var(--moekoe-heart-color, #ff4d6a) !important;
+  color: #ffffff !important;
+  opacity: 1 !important;
+}
+
+.queue-popup .queue-item .moekoe-play-next-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+  background: var(--moekoe-heart-color, #ff4d6a) !important;
+  color: #ffffff !important;
+}
+
+.moekoe-queue-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 18px;
+  padding: 0 5px;
+  border-radius: 999px;
+  font-size: 10px;
+  font-weight: 600;
+  line-height: 1;
+  background: color-mix(in srgb, var(--moekoe-heart-color, #ff4d6a) 16%, transparent);
+  color: var(--moekoe-heart-color, #ff4d6a);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+/* 歌单/专辑/排行榜列表行“下一首播放”按钮 */
+.track-list .li .track-timelen {
+  display: inline-flex !important;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 8px;
+}
+
+.moekoe-play-next-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 26px;
+  height: 26px;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(127, 127, 127, 0.14);
+  color: currentColor;
+  cursor: pointer;
+  opacity: 0.55;
+  transform: scale(0.95);
+  transition: opacity 0.18s ease, transform 0.18s ease, background-color 0.18s ease, color 0.18s ease;
+  flex-shrink: 0;
+}
+
+.moekoe-play-next-btn svg {
+  width: 14px;
+  height: 14px;
+  display: block;
+}
+
+.track-list .li:hover .moekoe-play-next-btn,
+.track-list .li:focus-within .moekoe-play-next-btn,
+.song-list .song-item:hover .moekoe-play-next-btn,
+.song-list .song-item:focus-within .moekoe-play-next-btn {
+  opacity: 0.92;
+  transform: scale(1);
+}
+
+.moekoe-play-next-btn:hover {
+  opacity: 1 !important;
+  transform: scale(1.1) !important;
+  background: var(--moekoe-heart-color, #ff4d6a) !important;
+  color: #ffffff !important;
+}
+
+/* 首页每日推荐网格卡片中的“下一首播放”位置 */
+.song-list .song-item .moekoe-play-next-btn {
+  position: absolute;
+  right: 46px;
+  top: 50%;
+  transform: translateY(-50%) scale(0.9);
+  opacity: 0;
+  z-index: 3;
+  width: 28px;
+  height: 28px;
+  background: rgba(255, 255, 255, 0.92);
+  color: #475569;
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.12);
+}
+
+.dark .song-list .song-item .moekoe-play-next-btn {
+  background: rgba(38, 38, 42, 0.92);
+  color: #e2e8f0;
+}
+
+.song-list .song-item:hover .moekoe-play-next-btn {
+  opacity: 0.95;
+  transform: translateY(-50%) scale(1);
+}
+
+.song-list .song-item .moekoe-play-next-btn:hover {
+  transform: translateY(-50%) scale(1.08) !important;
+}
+
+/* 静默触发原生右键“添加到下一首”时隐藏菜单防闪烁 */
+body.moekoe-silent-contextmenu .context-menu {
+  opacity: 0 !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+  transition: none !important;
+}

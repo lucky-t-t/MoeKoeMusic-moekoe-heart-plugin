@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MoeKoe 红心收藏设置</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <div class="popup-root">
+    <header class="popup-header">
+      <div class="header-title">
+        <span class="heart-preview" id="heartPreview">♥</span>
+        <div>
+          <h1>红心收藏设置</h1>
+          <p>实时生效，无需重启客户端</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="card">
+      <div class="section-label">爱心高亮颜色</div>
+      <div class="color-grid" id="colorGrid"></div>
+
+      <div class="custom-color-row">
+        <span>自定义颜色</span>
+        <label class="custom-picker">
+          <input type="color" id="customColorInput" value="#ff4d6a" />
+          <span id="customColorHex">#ff4d6a</span>
+        </label>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-label">功能开关</div>
+
+      <label class="toggle-row">
+        <div class="toggle-text">
+          <strong>列表显示「下一首播放」按钮</strong>
+          <span>在播放列表、歌单与每日推荐歌曲右侧显示快捷插播按钮</span>
+        </div>
+        <input type="checkbox" id="togglePlayNext" checked />
+        <span class="switch"></span>
+      </label>
+    </section>
+
+    <footer class="popup-footer">
+      <span class="status-text" id="statusText">已保存</span>
+    </footer>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
